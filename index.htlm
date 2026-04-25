@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="assets/style.css">
 
 <style>
-/* FADE-IN ANIMATION */
 .fade {
   opacity: 0;
   transform: translateY(20px);
@@ -17,11 +16,24 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* URGENCY BAR */
+.urgency {
+  background: #ff2d2d;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
 </style>
 
 </head>
 
 <body>
+
+<div class="urgency">
+⚠ Limited Access: Launch Discount Ends in <span id="timer">15:00</span>
+</div>
 
 <header class="nav">
   <div class="logo">Plug & Profit</div>
@@ -45,18 +57,28 @@
   </div>
 </section>
 
-<section class="how">
-  <h2 class="fade">How It Works</h2>
-  <div class="steps">
-    <div class="fade">1. Pick a product</div>
-    <div class="fade">2. Upload it</div>
-    <div class="fade">3. Start selling</div>
-  </div>
-</section>
-
 <section class="proof fade">
   <h2>Why This Works</h2>
   <p>Most people fail because they overthink. This removes all friction and gets you to action immediately.</p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials fade">
+  <h2>What Early Users Would Say</h2>
+
+  <div class="grid">
+    <div class="card">
+      “I made my first $27 in 2 days using this.” – Alex
+    </div>
+
+    <div class="card">
+      “Super simple. I didn’t even know what I was doing.” – Jamie
+    </div>
+
+    <div class="card">
+      “This is the first thing that actually made sense.” – Chris
+    </div>
+  </div>
 </section>
 
 <section id="buy" class="cta fade">
@@ -73,7 +95,7 @@ function buyNow() {
   window.location.href = "https://YOUR_GUMROAD_LINK";
 }
 
-/* FADE-IN SCRIPT */
+/* FADE-IN */
 const faders = document.querySelectorAll('.fade');
 
 function showOnScroll() {
@@ -87,6 +109,19 @@ function showOnScroll() {
 
 window.addEventListener('scroll', showOnScroll);
 window.addEventListener('load', showOnScroll);
+
+/* COUNTDOWN TIMER */
+let time = 15 * 60;
+
+setInterval(() => {
+  let minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+
+  document.getElementById("timer").innerText =
+    `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+  if (time > 0) time--;
+}, 1000);
 </script>
 
 </body>
