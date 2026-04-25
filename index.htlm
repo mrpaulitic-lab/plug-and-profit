@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Plug & Profit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Start Selling Digital Products Today</h1>
+<p class="sub">No skills. No ideas. No experience needed.</p>
+
+<div class="box">
+<h2>What You Get:</h2>
+<ul>
+<li>✔ 3 Ready-to-Sell Digital Products</li>
+<li>✔ Copy & Paste Sales Pages</li>
+<li>✔ Beginner Friendly System</li>
+<li>✔ Launch in Under 60 Minutes</li>
+</ul>
+</div>
+
+<button onclick="buyNow()">Get Instant Access - $19</button>
+
+<p class="guarantee">One-time payment. Instant download.</p>
+
+</div>
+
+<script>
+function buyNow() {
+  window.location.href = "https://YOUR_GUMROAD_LINK";
+}
+</script>
+
+</body>
+</html>
