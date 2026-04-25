@@ -2,33 +2,56 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Plug & Profit</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plug & Profit</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 
-<div class="container">
+<header class="nav">
+  <div class="logo">Plug & Profit</div>
+  <a href="#buy" class="nav-btn">Get Access</a>
+</header>
 
-<h1>Start Selling Digital Products Today</h1>
-<p class="sub">No skills. No ideas. No experience needed.</p>
+<section class="hero">
+  <h1>Start Selling Digital Products Today</h1>
+  <p>No skills. No ideas. No experience needed.</p>
+  <button onclick="buyNow()">Get Instant Access - $19</button>
+</section>
 
-<div class="box">
-<h2>What You Get:</h2>
-<ul>
-<li>✔ 3 Ready-to-Sell Digital Products</li>
-<li>✔ Copy & Paste Sales Pages</li>
-<li>✔ Beginner Friendly System</li>
-<li>✔ Launch in Under 60 Minutes</li>
-</ul>
-</div>
+<section class="features">
+  <h2>What You Get</h2>
+  <div class="grid">
+    <div class="card">3 Done-For-You Products</div>
+    <div class="card">100 Viral Hooks</div>
+    <div class="card">Copy & Paste Sales Pages</div>
+    <div class="card">Launch in 60 Minutes</div>
+  </div>
+</section>
 
-<button onclick="buyNow()">Get Instant Access - $19</button>
+<section class="how">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div>1. Pick a product</div>
+    <div>2. Upload it</div>
+    <div>3. Start selling</div>
+  </div>
+</section>
 
-<p class="guarantee">One-time payment. Instant download.</p>
+<section class="proof">
+  <h2>Why This Works</h2>
+  <p>Most people fail because they overthink. This removes all friction and gets you to action immediately.</p>
+</section>
 
-</div>
+<section id="buy" class="cta">
+  <h2>Launch Your First Product Today</h2>
+  <button onclick="buyNow()">Get Instant Access</button>
+</section>
+
+<footer>
+  <p>© 2026 Plug & Profit</p>
+</footer>
 
 <script>
 function buyNow() {
