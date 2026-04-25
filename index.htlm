@@ -5,6 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plug & Profit</title>
 <link rel="stylesheet" href="assets/style.css">
+
+<style>
+/* FADE-IN ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s ease;
+}
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
 </head>
 
 <body>
@@ -14,42 +28,43 @@
   <a href="#buy" class="nav-btn">Get Access</a>
 </header>
 
-<section class="hero">
+<section class="hero fade">
   <h1>Start Selling Digital Products Today</h1>
   <p>No skills. No ideas. No experience needed.</p>
   <button onclick="buyNow()">Get Instant Access - $19</button>
 </section>
 
 <section class="features">
-  <h2>What You Get</h2>
+  <h2 class="fade">What You Get</h2>
+
   <div class="grid">
-    <div class="card">3 Done-For-You Products</div>
-    <div class="card">100 Viral Hooks</div>
-    <div class="card">Copy & Paste Sales Pages</div>
-    <div class="card">Launch in 60 Minutes</div>
+    <div class="card fade">3 Done-For-You Products</div>
+    <div class="card fade">100 Viral Hooks</div>
+    <div class="card fade">Copy & Paste Sales Pages</div>
+    <div class="card fade">Launch in 60 Minutes</div>
   </div>
 </section>
 
 <section class="how">
-  <h2>How It Works</h2>
+  <h2 class="fade">How It Works</h2>
   <div class="steps">
-    <div>1. Pick a product</div>
-    <div>2. Upload it</div>
-    <div>3. Start selling</div>
+    <div class="fade">1. Pick a product</div>
+    <div class="fade">2. Upload it</div>
+    <div class="fade">3. Start selling</div>
   </div>
 </section>
 
-<section class="proof">
+<section class="proof fade">
   <h2>Why This Works</h2>
   <p>Most people fail because they overthink. This removes all friction and gets you to action immediately.</p>
 </section>
 
-<section id="buy" class="cta">
+<section id="buy" class="cta fade">
   <h2>Launch Your First Product Today</h2>
   <button onclick="buyNow()">Get Instant Access</button>
 </section>
 
-<footer>
+<footer class="fade">
   <p>© 2026 Plug & Profit</p>
 </footer>
 
@@ -57,6 +72,21 @@
 function buyNow() {
   window.location.href = "https://YOUR_GUMROAD_LINK";
 }
+
+/* FADE-IN SCRIPT */
+const faders = document.querySelectorAll('.fade');
+
+function showOnScroll() {
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 50) {
+      el.classList.add('show');
+    }
+  });
+}
+
+window.addEventListener('scroll', showOnScroll);
+window.addEventListener('load', showOnScroll);
 </script>
 
 </body>
