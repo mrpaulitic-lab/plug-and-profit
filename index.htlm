@@ -16,8 +16,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-
-/* URGENCY BAR */
 .urgency {
   background: #ff2d2d;
   color: white;
@@ -26,13 +24,12 @@
   font-weight: bold;
 }
 </style>
-
 </head>
 
 <body>
 
 <div class="urgency">
-⚠ Limited Access: Launch Discount Ends in <span id="timer">15:00</span>
+⚠ Limited Discount Ends In <span id="timer">15:00</span>
 </div>
 
 <header class="nav">
@@ -43,12 +40,11 @@
 <section class="hero fade">
   <h1>Start Selling Digital Products Today</h1>
   <p>No skills. No ideas. No experience needed.</p>
-  <button onclick="buyNow()">Get Instant Access - $19</button>
+  <button onclick="buyNow()">Get Access - $19</button>
 </section>
 
 <section class="features">
   <h2 class="fade">What You Get</h2>
-
   <div class="grid">
     <div class="card fade">3 Done-For-You Products</div>
     <div class="card fade">100 Viral Hooks</div>
@@ -57,32 +53,17 @@
   </div>
 </section>
 
-<section class="proof fade">
-  <h2>Why This Works</h2>
-  <p>Most people fail because they overthink. This removes all friction and gets you to action immediately.</p>
-</section>
-
-<!-- TESTIMONIALS -->
 <section class="testimonials fade">
-  <h2>What Early Users Would Say</h2>
-
+  <h2>What Users Say</h2>
   <div class="grid">
-    <div class="card">
-      “I made my first $27 in 2 days using this.” – Alex
-    </div>
-
-    <div class="card">
-      “Super simple. I didn’t even know what I was doing.” – Jamie
-    </div>
-
-    <div class="card">
-      “This is the first thing that actually made sense.” – Chris
-    </div>
+    <div class="card">“Made my first $20 in 2 days.”</div>
+    <div class="card">“Super simple and actually works.”</div>
+    <div class="card">“Best beginner product I’ve used.”</div>
   </div>
 </section>
 
 <section id="buy" class="cta fade">
-  <h2>Launch Your First Product Today</h2>
+  <h2>Launch Today</h2>
   <button onclick="buyNow()">Get Instant Access</button>
 </section>
 
@@ -95,7 +76,6 @@ function buyNow() {
   window.location.href = "https://YOUR_GUMROAD_LINK";
 }
 
-/* FADE-IN */
 const faders = document.querySelectorAll('.fade');
 
 function showOnScroll() {
@@ -110,16 +90,12 @@ function showOnScroll() {
 window.addEventListener('scroll', showOnScroll);
 window.addEventListener('load', showOnScroll);
 
-/* COUNTDOWN TIMER */
-let time = 15 * 60;
-
+let time = 900;
 setInterval(() => {
-  let minutes = Math.floor(time / 60);
-  let seconds = time % 60;
-
+  let m = Math.floor(time / 60);
+  let s = time % 60;
   document.getElementById("timer").innerText =
-    `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-
+    `${m}:${s < 10 ? "0" : ""}${s}`;
   if (time > 0) time--;
 }, 1000);
 </script>
