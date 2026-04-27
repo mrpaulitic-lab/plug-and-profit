@@ -8,67 +8,92 @@
 
 <style>
 .fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.6s ease;
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.6s ease;
 }
 .fade.show {
-  opacity: 1;
-  transform: translateY(0);
+  opacity:1;
+  transform:translateY(0);
 }
+
 .urgency {
-  background: #ff2d2d;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
+  background:#ff2d2d;
+  text-align:center;
+  padding:10px;
 }
+
 </style>
 </head>
 
 <body>
 
 <div class="urgency">
-⚠ Limited Discount Ends In <span id="timer">15:00</span>
+⚠ Limited Launch Pricing — Ends in <span id="timer">15:00</span>
 </div>
 
 <header class="nav">
-  <div class="logo">Plug & Profit</div>
-  <a href="#buy" class="nav-btn">Get Access</a>
+<div class="logo">Plug & Profit</div>
 </header>
 
 <section class="hero fade">
-  <h1>Start Selling Digital Products Today</h1>
-  <p>No skills. No ideas. No experience needed.</p>
-  <button onclick="buyNow()">Get Access - $19</button>
+<h1>Start Selling Digital Products Today</h1>
+<p>No skills. No experience. No guesswork.</p>
+
+<button onclick="buyNow()">Get Instant Access - $19</button>
+
+<p style="color:#aaa; font-size:14px; margin-top:10px;">
+Instant access sent to your email. No subscription.
+</p>
+
+<p style="color:#00ff99; font-size:13px;">
+✔ Beginner friendly ✔ Instant delivery ✔ One-time payment
+</p>
+
 </section>
 
 <section class="features">
-  <h2 class="fade">What You Get</h2>
-  <div class="grid">
-    <div class="card fade">3 Done-For-You Products</div>
-    <div class="card fade">100 Viral Hooks</div>
-    <div class="card fade">Copy & Paste Sales Pages</div>
-    <div class="card fade">Launch in 60 Minutes</div>
-  </div>
+<h2 class="fade">What You Get</h2>
+
+<div class="grid">
+<div class="card fade">3 Ready-to-Sell Products</div>
+<div class="card fade">100 Viral Hooks</div>
+<div class="card fade">Copy & Paste Sales Pages</div>
+<div class="card fade">Launch in 60 Minutes</div>
+</div>
+</section>
+
+<section class="fade" style="text-align:center;">
+<p style="color:#aaa;">Trusted by beginners launching their first product</p>
 </section>
 
 <section class="testimonials fade">
-  <h2>What Users Say</h2>
-  <div class="grid">
-    <div class="card">“Made my first $20 in 2 days.”</div>
-    <div class="card">“Super simple and actually works.”</div>
-    <div class="card">“Best beginner product I’ve used.”</div>
-  </div>
+<h2>What Users Say</h2>
+
+<div class="grid">
+<div class="card">“I stopped overthinking and made my first sale.”</div>
+<div class="card">“This actually told me what to DO.”</div>
+<div class="card">“I launched the same day.”</div>
+</div>
 </section>
 
-<section id="buy" class="cta fade">
-  <h2>Launch Today</h2>
-  <button onclick="buyNow()">Get Instant Access</button>
+<section class="cta fade">
+<h2>Launch Today</h2>
+
+<button onclick="buyNow()">Get Instant Access</button>
+
+<p style="color:#aaa; font-size:14px;">
+If this doesn’t help you launch, you shouldn’t keep it.
+</p>
+
+<p style="color:#ff2d2d; font-size:13px;">
+Limited launch pricing — increasing soon
+</p>
+
 </section>
 
 <footer class="fade">
-  <p>© 2026 Plug & Profit</p>
+<p>© 2026 Plug & Profit</p>
 </footer>
 
 <script>
@@ -81,7 +106,7 @@ const faders = document.querySelectorAll('.fade');
 function showOnScroll() {
   faders.forEach(el => {
     const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 50) {
+    if(top < window.innerHeight - 50) {
       el.classList.add('show');
     }
   });
@@ -91,12 +116,15 @@ window.addEventListener('scroll', showOnScroll);
 window.addEventListener('load', showOnScroll);
 
 let time = 900;
+
 setInterval(() => {
   let m = Math.floor(time / 60);
   let s = time % 60;
+
   document.getElementById("timer").innerText =
     `${m}:${s < 10 ? "0" : ""}${s}`;
-  if (time > 0) time--;
+
+  if(time > 0) time--;
 }, 1000);
 </script>
 
